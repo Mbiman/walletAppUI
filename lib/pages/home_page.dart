@@ -19,6 +19,42 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.pink,
+        child: const Icon(
+          Icons.monetization_on,
+          size: 32,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.grey[200],
+        child: Padding(
+          padding: const EdgeInsets.only(top: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.home,
+                  size: 32,
+                  color: Colors.pink[200],
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.settings,
+                  size: 32,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -97,7 +133,7 @@ class _HomePageState extends State<HomePage> {
               effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade700),
             ),
 
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
 
             //3 buttons (send, pay, bills)
             Padding(
@@ -113,9 +149,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
+            const SizedBox(height: 40),
+
             //column (stats, transactions)
             Padding(
-              padding: const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: const [
                   //statistics
@@ -123,8 +161,6 @@ class _HomePageState extends State<HomePage> {
                       imagePath: 'lib/icons/statistics.png',
                       details: 'Payments and Income',
                       title: 'Statistics'),
-
-                  SizedBox(height: 15),
 
                   //transactions
                   MyListTile(
